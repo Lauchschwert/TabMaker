@@ -1,13 +1,13 @@
-package UI;
+package UI.MainWindow;
 
 import javax.swing.*;
 
 public class Window extends JFrame {
-    TabPanel tabPanel;
+    MainPanel tabPanel;
     public Window() {
         super("Tabmaker");
         
-        tabPanel = new TabPanel();
+        tabPanel = new MainPanel();
         add(tabPanel);
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

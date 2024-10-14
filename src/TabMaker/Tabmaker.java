@@ -1,6 +1,6 @@
 package TabMaker;
 
-import UI.Window;
+import UI.MainWindow.Window;
 
 public class Tabmaker {
     public Tabmaker()  {
