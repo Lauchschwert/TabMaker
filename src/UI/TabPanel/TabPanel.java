@@ -5,8 +5,9 @@ import java.awt.*;
 
 public class TabPanel extends JPanel {
     public TabPanel() {
+        // Set default Layout for the Tabs (default: Guitar)
         super(new GridLayout(6,2));
-        this.setBackground(new Color(255,0,255));
+        this.setOpaque(false);
         setPreferredSize(new Dimension(600,600));
     }
 }

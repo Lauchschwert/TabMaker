@@ -1,15 +1,8 @@
 package UI.ModePanel.Buttons.ModeButton;
 
-import java.awt.event.ActionEvent;
-
-public class BassButton extends ModeButton {
+public class BassButton extends TabButton {
+    // Use TabButton as Pattern and set Title
     public BassButton(String title) {
-        super(title);
+        super(title, 150, 60);
     }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
-    }
-
 }
