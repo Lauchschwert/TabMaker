@@ -1,6 +1,6 @@
-package TabMaker;
+package xyz.Lauchschwert.tabmaker;
 
-import UI.MainWindow.Window;
+import xyz.Lauchschwert.tabmaker.ui.mainwindow.Window;
 
 public class Tabmaker {
     public Tabmaker()  {

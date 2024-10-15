@@ -1,8 +1,8 @@
-package UI.MainWindow;
+package xyz.Lauchschwert.tabmaker.ui.mainwindow;
 
-import UI.ModePanel.ModePanel;
-import UI.TabPanel.TabPanel;
-import UI.ToolPanel.ToolPanel;
+import xyz.Lauchschwert.tabmaker.ui.modpanel.ModePanel;
+import xyz.Lauchschwert.tabmaker.ui.tabpanel.TabPanel;
+import xyz.Lauchschwert.tabmaker.ui.toolpanel.ToolPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,7 +21,7 @@ public class MainPanel extends JPanel {
         this.add(toolPanel, BorderLayout.SOUTH);
         
         // set Properties
-        this.setBackground(new Color(25,0,100));
+        this.setBackground(new Color(15,10,45));
         
     }
 }

@@ -1,4 +1,4 @@
-package UI.ModePanel.Buttons.ModeButton;
+package xyz.Lauchschwert.tabmaker.ui.buttons;
 
 public class GuitarButton extends TabButton {
     // use TabButton as Pattern and set the Title

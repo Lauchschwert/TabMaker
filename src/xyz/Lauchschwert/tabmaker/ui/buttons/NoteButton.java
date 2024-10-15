@@ -1,8 +1,4 @@
-package UI.ToolPanel;
-
-import UI.ModePanel.Buttons.ModeButton.TabButton;
-
-import java.awt.event.ActionEvent;
+package xyz.Lauchschwert.tabmaker.ui.buttons;
 
 public class NoteButton extends TabButton{
     // Inherit ToolButton and use it as a Template. Change Title in Constructor using The ToolButton Constructor

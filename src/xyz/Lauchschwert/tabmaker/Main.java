@@ -1,8 +1,4 @@
-package Main;
-
-import TabMaker.Tabmaker;
-
-import javax.swing.*;
+package xyz.Lauchschwert.tabmaker;
 
 public class Main {
     public static void main(String[] args) {

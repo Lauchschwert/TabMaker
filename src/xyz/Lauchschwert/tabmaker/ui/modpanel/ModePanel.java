@@ -1,7 +1,7 @@
-package UI.ModePanel;
+package xyz.Lauchschwert.tabmaker.ui.modpanel;
 
-import UI.ModePanel.Buttons.ModeButton.BassButton;
-import UI.ModePanel.Buttons.ModeButton.GuitarButton;
+import xyz.Lauchschwert.tabmaker.ui.buttons.BassButton;
+import xyz.Lauchschwert.tabmaker.ui.buttons.GuitarButton;
 
 import javax.swing.*;
 import java.awt.*;
@@ -33,11 +33,17 @@ public class ModePanel extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        resetButtons();
         // handle the source of the event / the origin of the event from the clicked button!
         if (e.getSource() == guitarButton) {
-            System.out.println("Hi");
+            guitarButton.setActive(true);
         } else if (e.getSource() == bassButton) {
-            System.out.println("Bye");
+            bassButton.setActive(true);
         }
+    }
+
+    private void resetButtons() {
+        guitarButton.setActive(false);
+        bassButton.setActive(false);
     }
 }
