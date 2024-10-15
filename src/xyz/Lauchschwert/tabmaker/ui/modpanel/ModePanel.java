@@ -2,6 +2,7 @@ package xyz.Lauchschwert.tabmaker.ui.modpanel;
 
 import xyz.Lauchschwert.tabmaker.ui.buttons.BassButton;
 import xyz.Lauchschwert.tabmaker.ui.buttons.GuitarButton;
+import xyz.Lauchschwert.tabmaker.ui.tabpanel.TabPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,8 +14,9 @@ import static xyz.Lauchschwert.tabmaker.Constraints.Modes.*;
 public class ModePanel extends JPanel implements ActionListener {
     GuitarButton guitarButton;
     BassButton bassButton;
-
-    public ModePanel(int mode) {
+    TabPanel tabPanel;
+    public ModePanel(int mode, TabPanel tabPanel) {
+        this.tabPanel = tabPanel;
         // for readability
         this.setLayout(new FlowLayout(FlowLayout.CENTER, 15, 15));
 
@@ -54,8 +56,10 @@ public class ModePanel extends JPanel implements ActionListener {
         // handle the source of the event / the origin of the event from the clicked button!
         if (e.getSource() == guitarButton) {
             guitarButton.setActive(true);
+            tabPanel.setMode(GUITAR);
         } else if (e.getSource() == bassButton) {
             bassButton.setActive(true);
+            tabPanel.setMode(BASS);
         }
     }
 

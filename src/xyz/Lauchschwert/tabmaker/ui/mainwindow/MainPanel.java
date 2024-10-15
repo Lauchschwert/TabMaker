@@ -13,8 +13,8 @@ public class MainPanel extends JPanel {
     private final int mode = GUITAR;
     public MainPanel() {
         // Create the Main Panels used for Tab Creation
-        ModePanel modePanel = new ModePanel(mode);
         TabPanel tabPanel = new TabPanel(mode);
+        ModePanel modePanel = new ModePanel(mode, tabPanel);
         ToolPanel toolPanel = new ToolPanel();
         
         // Set Layout and add Buttons to the Panel
@@ -25,6 +25,5 @@ public class MainPanel extends JPanel {
         
         // set Properties
         this.setBackground(new Color(15,10,45));
-        
     }
 }
