@@ -7,11 +7,14 @@ import xyz.Lauchschwert.tabmaker.ui.toolpanel.ToolPanel;
 import javax.swing.*;
 import java.awt.*;
 
+import static xyz.Lauchschwert.tabmaker.Constraints.Modes.*;
+
 public class MainPanel extends JPanel {
+    private final int mode = GUITAR;
     public MainPanel() {
         // Create the Main Panels used for Tab Creation
-        ModePanel modePanel = new ModePanel();
-        TabPanel tabPanel = new TabPanel();
+        ModePanel modePanel = new ModePanel(mode);
+        TabPanel tabPanel = new TabPanel(mode);
         ToolPanel toolPanel = new ToolPanel();
         
         // Set Layout and add Buttons to the Panel
