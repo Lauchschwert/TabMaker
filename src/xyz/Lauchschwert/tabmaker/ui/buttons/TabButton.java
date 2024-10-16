@@ -33,4 +33,7 @@ public abstract class TabButton extends JButton {
             this.setBorder(this.defaultBorder);
         }
     }
+    public boolean isActive() {
+        return this.selected;
+    }
 }

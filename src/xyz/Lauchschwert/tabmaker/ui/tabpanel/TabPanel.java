@@ -32,7 +32,6 @@ public class TabPanel extends JPanel {
         switch (mode) {
             case GUITAR:
                 rows = 6;
-                System.out.println("test");
                 strings = GUITAR_STRINGS;
                 break;
             case BASS:
