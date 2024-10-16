@@ -1,8 +1,7 @@
-package xyz.Lauchschwert.tabmaker.ui.modpanel;
+package xyz.Lauchschwert.tabmaker.ui.panels;
 
 import xyz.Lauchschwert.tabmaker.ui.buttons.BassButton;
 import xyz.Lauchschwert.tabmaker.ui.buttons.GuitarButton;
-import xyz.Lauchschwert.tabmaker.ui.tabpanel.TabPanel;
 
 import javax.swing.*;
 import java.awt.*;

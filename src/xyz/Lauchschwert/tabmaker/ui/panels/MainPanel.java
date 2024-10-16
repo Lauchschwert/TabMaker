@@ -1,21 +1,23 @@
-package xyz.Lauchschwert.tabmaker.ui.mainwindow;
+package xyz.Lauchschwert.tabmaker.ui.panels;
 
-import xyz.Lauchschwert.tabmaker.ui.modpanel.ModePanel;
-import xyz.Lauchschwert.tabmaker.ui.tabpanel.TabPanel;
-import xyz.Lauchschwert.tabmaker.ui.toolpanel.ToolPanel;
+import xyz.Lauchschwert.tabmaker.ui.buttons.TabButton;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 import static xyz.Lauchschwert.tabmaker.Constraints.Modes.*;
 
 public class MainPanel extends JPanel {
+    private TabPanel tabPanel;
+    private ModePanel modePanel;
+    private ToolPanel toolPanel;
     private final int mode = GUITAR;
     public MainPanel() {
         // Create the Main Panels used for Tab Creation
-        TabPanel tabPanel = new TabPanel(mode);
-        ModePanel modePanel = new ModePanel(mode, tabPanel);
-        ToolPanel toolPanel = new ToolPanel(tabPanel);
+        tabPanel = new TabPanel(mode, this);
+        modePanel = new ModePanel(mode, tabPanel);
+        toolPanel = new ToolPanel(tabPanel);
         
         // Set Layout and add Buttons to the Panel
         this.setLayout(new BorderLayout());
@@ -25,5 +27,9 @@ public class MainPanel extends JPanel {
         
         // set Properties
         this.setBackground(new Color(15,10,45));
+    }
+
+    public TabButton getSelectedTool() {
+        return toolPanel.getSelectedTool();
     }
 }

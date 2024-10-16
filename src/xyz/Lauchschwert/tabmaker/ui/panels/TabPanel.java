@@ -1,7 +1,4 @@
-package xyz.Lauchschwert.tabmaker.ui.tabpanel;
-
-import xyz.Lauchschwert.tabmaker.ui.mainwindow.MainPanel;
-import xyz.Lauchschwert.tabmaker.ui.stringpanel.StringPanel;
+package xyz.Lauchschwert.tabmaker.ui.panels;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,7 +11,7 @@ public class TabPanel extends JPanel {
     private String[] strings;
     private MainPanel mainPanel;
 
-    public TabPanel(int mode) {
+    public TabPanel(int mode, MainPanel mainPanel) {
         this.mainPanel = mainPanel;
         setMode(mode);
 
@@ -41,7 +38,7 @@ public class TabPanel extends JPanel {
         }
         // create the String Panels
         for (int i = 0; i < rows; i++)
-            add(new StringPanel(i, this.strings));
+            add(new StringPanel(i, this.strings, mainPanel));
         this.revalidate();
         this.repaint();
     }

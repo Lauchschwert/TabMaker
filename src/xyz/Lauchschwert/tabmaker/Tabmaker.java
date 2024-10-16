@@ -1,6 +1,6 @@
 package xyz.Lauchschwert.tabmaker;
 
-import xyz.Lauchschwert.tabmaker.ui.mainwindow.Window;
+import xyz.Lauchschwert.tabmaker.ui.windows.Window;
 
 public class Tabmaker {
     public Tabmaker()  {

@@ -1,4 +1,6 @@
-package xyz.Lauchschwert.tabmaker.ui.mainwindow;
+package xyz.Lauchschwert.tabmaker.ui.windows;
+
+import xyz.Lauchschwert.tabmaker.ui.panels.MainPanel;
 
 import javax.swing.*;
 
