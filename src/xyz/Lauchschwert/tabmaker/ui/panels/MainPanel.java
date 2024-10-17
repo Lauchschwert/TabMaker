@@ -15,7 +15,7 @@ public class MainPanel extends JPanel {
     public MainPanel() {
         // Create the Main Panels used for Tab Creation
         tabPanel = new TabPanel(mode, this);
-        modePanel = new ModePanel(mode, tabPanel);
+        modePanel = new ModePanel(mode, this);
         toolPanel = new ToolPanel(tabPanel);
         
         // Set Layout and add Buttons to the Panel
@@ -30,5 +30,9 @@ public class MainPanel extends JPanel {
 
     public TabButton getSelectedTool() {
         return toolPanel.getSelectedTool();
+    }
+
+    public TabPanel getTabPanel() {
+        return tabPanel;
     }
 }

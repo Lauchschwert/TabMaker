@@ -13,22 +13,21 @@ import java.awt.event.ActionListener;
 public class StringPanel extends JPanel implements ActionListener {
     private final StringButton stringButton;
     private TabArea tabArea;
-    private final MainPanel mainPanel;
+    private final TabPanel tabPanel;
 
-    public StringPanel(int panelIndex, String[] strings, MainPanel mainPanel) {
+    public StringPanel(int panelIndex, String[] strings, TabPanel tabPanel) {
         // Initiate the Panel with super and the Layout we want
         super(new FlowLayout(FlowLayout.CENTER, 20, 15));
-        this.mainPanel = mainPanel;
+        this.tabPanel = tabPanel;
 
         this.setOpaque(false);
-        
+
         // Create the StringButton
         stringButton = new StringButton(strings[panelIndex], 50, 50);
         stringButton.addActionListener(this);
-        
-        tabArea = new TabArea(panelIndex);
-       
 
+        tabArea = new TabArea(panelIndex);
+        
         // add Components to Panel
         add(stringButton);
         add(tabArea);
@@ -37,11 +36,8 @@ public class StringPanel extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == stringButton) {
-            if (mainPanel.getSelectedTool() == null)
-                return;
-            if (mainPanel.getSelectedTool() instanceof NoteButton) {
-                NoteSelectorWindow noteSelector = new NoteSelectorWindow();
-                tabArea.setText(new StringBuilder(tabArea.getText()).append(noteSelector.getNote()).append(" ").toString());
+            if (tabPanel.getMainPanel().getSelectedTool() instanceof NoteButton) {
+                tabArea.setText(new StringBuilder(tabArea.getText()).append(tabPanel.getMainPanel().getSelectedTool().getText()).append(" ").toString());
             }
         }
     }

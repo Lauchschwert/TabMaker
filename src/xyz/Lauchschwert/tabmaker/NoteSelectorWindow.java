@@ -2,10 +2,10 @@ package xyz.Lauchschwert.tabmaker;
 
 import javax.swing.*;
 
-public class NoteSelectorWindow extends JFrame {
-    private int value;
+public class NoteSelectorWindow {
+    private static int value;
     
-    public int getNote() {
+    public static int getNote() {
         try {
             String input = JOptionPane.showInputDialog(null, "Input a note", "Note input window", JOptionPane.INFORMATION_MESSAGE);
             if (input.isEmpty())

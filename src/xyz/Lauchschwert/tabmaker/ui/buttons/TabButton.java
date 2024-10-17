@@ -5,7 +5,7 @@ import javax.swing.border.Border;
 import java.awt.*;
 
 public abstract class TabButton extends JButton {
-
+    
     private boolean selected;
     private Color defaultBackgroundColor = new Color(0, 50, 150);
     private Color activeBackgroundColor = defaultBackgroundColor.brighter().brighter();

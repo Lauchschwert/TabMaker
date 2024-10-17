@@ -14,6 +14,7 @@ public class TabArea extends JTextField {
         this.setPreferredSize(new Dimension(500, 50));
         this.setBackground(new Color(50,50,150));
         this.setMargin(new Insets(10,10,10,10));
+        this.setForeground(Color.white);
     }
     
     public String formatTabs() {
@@ -21,5 +22,8 @@ public class TabArea extends JTextField {
         stringBuilder.append(GUITAR_STRINGS[panelIndex] + " -| ");
         stringBuilder.append(this.getText());
         return stringBuilder.toString();
+    }
+    public int tabLength() {
+        return formatTabs().length();
     }
 }
