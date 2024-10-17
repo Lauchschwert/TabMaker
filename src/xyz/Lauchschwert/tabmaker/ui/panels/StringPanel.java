@@ -26,7 +26,7 @@ public class StringPanel extends JPanel implements ActionListener {
         stringButton = new StringButton(strings[panelIndex], 50, 50);
         stringButton.addActionListener(this);
         
-        tabArea = new TabArea();
+        tabArea = new TabArea(panelIndex);
        
 
         // add Components to Panel
@@ -44,5 +44,10 @@ public class StringPanel extends JPanel implements ActionListener {
                 tabArea.setText(new StringBuilder(tabArea.getText()).append(noteSelector.getNote()).append(" ").toString());
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        return tabArea.formatTabs();
     }
 }

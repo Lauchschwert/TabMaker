@@ -8,7 +8,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static xyz.Lauchschwert.tabmaker.Constraints.Modes.*;
+import static xyz.Lauchschwert.tabmaker.Constants.Modes.*;
 
 public class ModePanel extends JPanel implements ActionListener {
     GuitarButton guitarButton;

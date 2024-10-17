@@ -1,6 +1,6 @@
 package xyz.Lauchschwert.tabmaker;
 
-public class Constraints {
+public class Constants {
     public class Strings {
         public static final String[] GUITAR_STRINGS = new String[] {
                 "E",

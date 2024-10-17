@@ -4,9 +4,8 @@ import xyz.Lauchschwert.tabmaker.ui.buttons.TabButton;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 
-import static xyz.Lauchschwert.tabmaker.Constraints.Modes.*;
+import static xyz.Lauchschwert.tabmaker.Constants.Modes.*;
 
 public class MainPanel extends JPanel {
     private TabPanel tabPanel;

@@ -3,8 +3,8 @@ package xyz.Lauchschwert.tabmaker.ui.panels;
 import javax.swing.*;
 import java.awt.*;
 
-import static xyz.Lauchschwert.tabmaker.Constraints.Modes.*;
-import static xyz.Lauchschwert.tabmaker.Constraints.Strings.*;
+import static xyz.Lauchschwert.tabmaker.Constants.Modes.*;
+import static xyz.Lauchschwert.tabmaker.Constants.Strings.*;
 
 public class TabPanel extends JPanel {
     private int rows;
@@ -16,7 +16,6 @@ public class TabPanel extends JPanel {
         setMode(mode);
 
         // set properties of the panel
-        
         // Set default Layout for the Tabs (default: Guitar)
         this.setLayout(new GridLayout(rows, 1));
         this.setBackground(new Color(25, 25, 75));
@@ -39,6 +38,8 @@ public class TabPanel extends JPanel {
         // create the String Panels
         for (int i = 0; i < rows; i++)
             add(new StringPanel(i, this.strings, mainPanel));
+        
+        // repaint to show the effect on the panel
         this.revalidate();
         this.repaint();
     }
