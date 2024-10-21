@@ -1,7 +1,5 @@
 package xyz.Lauchschwert.tabmaker.ui.panels;
 
-import com.sun.source.tree.IfTree;
-
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
@@ -19,7 +17,7 @@ public class TabPanel extends JPanel {
     public TabPanel(int mode, MainPanel mainPanel) {
         this.mainPanel = mainPanel;
 
-        // initiate the strinPanel list
+        // initiate the stringPanel list
         this.stringPanels = new ArrayList<>();
 
         // set the default mode
@@ -33,7 +31,9 @@ public class TabPanel extends JPanel {
 
     // set mode if it switches
     public void setMode(int mode) {
-        this.removeAll();
+        if (stringPanels.size() > 0) {
+            resetTabPanel();
+        }
 
         switch (mode) {
             case GUITAR:
@@ -45,16 +45,30 @@ public class TabPanel extends JPanel {
                 strings = BASS_STRINGS;
                 break;
         }
+
+        addPanelsToPanel(this.rows);
+
+        // repaint to show the effect on the panel
+        this.revalidate();
+        this.repaint();
+    }
+
+    private void removePanelsFromList() {
+        // Explicitly set each StringPanel instance to null before clearing the list
+        for (int i = 0; i < stringPanels.size(); i++) {
+            stringPanels.set(i, null);  // Help the garbage collector by removing strong references
+        }
+        
+        stringPanels.clear();  // Now clear the list
+    }
+
+    private void addPanelsToPanel(int rows) {
         // create the String Panels
         for (int i = 0; i < rows; i++) {
             StringPanel stringPanel = new StringPanel(i, strings, this);
             this.add(stringPanel);
             stringPanels.add(stringPanel);
         }
-
-        // repaint to show the effect on the panel
-        this.revalidate();
-        this.repaint();
     }
 
     public MainPanel getMainPanel() {
@@ -95,5 +109,10 @@ public class TabPanel extends JPanel {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private void resetTabPanel() {
+        this.removeAll();
+        removePanelsFromList();
     }
 }
