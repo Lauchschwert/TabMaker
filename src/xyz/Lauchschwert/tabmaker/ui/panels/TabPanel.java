@@ -133,7 +133,8 @@ public class TabPanel extends JPanel {
 
         }
         for (StringPanel stringPanel : stringPanels) {
-            if (stringPanel.getRawLength() < maxLength && stringPanel.getRawLength() == shortestLength) {
+            if (stringPanel.getRawLength() < maxLength && stringPanel.getRawLength() == shortestLength
+            || stringPanel.getRawLength() == shortestLength && stringPanel.getRawLength() == maxLength) {
                 shortPanels.add(stringPanel);
             }
         }
