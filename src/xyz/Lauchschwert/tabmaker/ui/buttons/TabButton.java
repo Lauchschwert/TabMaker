@@ -3,6 +3,7 @@ package xyz.Lauchschwert.tabmaker.ui.buttons;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public abstract class TabButton extends JButton {
     

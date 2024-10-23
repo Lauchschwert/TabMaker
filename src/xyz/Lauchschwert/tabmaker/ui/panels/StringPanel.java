@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 
 public class StringPanel extends JPanel implements ActionListener {
     private final StringButton stringButton;
-    private TabArea tabArea;
+    private final TabArea tabArea;
     private final TabPanel tabPanel;
 
     public StringPanel(int panelIndex, String[] strings, TabPanel tabPanel) {
@@ -37,7 +37,7 @@ public class StringPanel extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == stringButton) {
             if (tabPanel.getMainPanel().getSelectedTool() instanceof NoteButton) {
-                tabArea.setText(new StringBuilder(tabArea.getText()).append(tabPanel.getMainPanel().getSelectedTool().getText()).append(" ").toString());
+                tabArea.setText(new StringBuilder(tabArea.getText()).append(tabPanel.getMainPanel().getSelectedTool().getText()).toString());
             }
         }
     }
@@ -45,5 +45,13 @@ public class StringPanel extends JPanel implements ActionListener {
     @Override
     public String toString() {
         return tabArea.formatTabs();
+    }
+    
+    public int getRawLength() {
+        return this.tabArea.getText().length();
+    }
+    
+    public void addNote(String note) {
+        this.tabArea.setText(new StringBuilder(tabArea.getText()).append(note).toString());
     }
 }

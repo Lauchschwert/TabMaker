@@ -10,7 +10,7 @@ public class TabArea extends JTextField {
         this.panelIndex = panelIndex;
         this.setEditable(false);
         this.setFocusable(false);
-        this.setFont(new Font("sans-serif", Font.BOLD, 18));
+        this.setFont(new Font("monospaced", Font.BOLD, 18));
         this.setPreferredSize(new Dimension(500, 50));
         this.setBackground(new Color(50,50,150));
         this.setMargin(new Insets(10,10,10,10));

@@ -8,10 +8,11 @@ import java.awt.*;
 import static xyz.Lauchschwert.tabmaker.Constants.Modes.*;
 
 public class MainPanel extends JPanel {
-    private TabPanel tabPanel;
-    private ModePanel modePanel;
-    private ToolPanel toolPanel;
+    private final TabPanel tabPanel;
+    private final ModePanel modePanel;
+    private final ToolPanel toolPanel;
     private final int mode = GUITAR;
+    
     public MainPanel() {
         // Create the Main Panels used for Tab Creation
         tabPanel = new TabPanel(mode, this);

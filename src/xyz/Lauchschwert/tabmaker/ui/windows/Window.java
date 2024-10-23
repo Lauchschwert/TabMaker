@@ -5,14 +5,14 @@ import xyz.Lauchschwert.tabmaker.ui.panels.MainPanel;
 import javax.swing.*;
 
 public class Window extends JFrame {
-    MainPanel tabPanel;
+    MainPanel mainPanel;
     public Window() {
         // Use the constructor of JFrame to set the Window title
         super("Tabmaker");
         
         // create and add the MainPanel
-        tabPanel = new MainPanel();
-        add(tabPanel);
+        mainPanel = new MainPanel();
+        add(mainPanel);
         
         // set some crucial Properties of the Window
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

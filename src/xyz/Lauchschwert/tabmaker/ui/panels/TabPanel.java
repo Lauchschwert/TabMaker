@@ -58,7 +58,7 @@ public class TabPanel extends JPanel {
         for (int i = 0; i < stringPanels.size(); i++) {
             stringPanels.set(i, null);  // Help the garbage collector by removing strong references
         }
-        
+
         stringPanels.clear();  // Now clear the list
     }
 
@@ -114,5 +114,29 @@ public class TabPanel extends JPanel {
     private void resetTabPanel() {
         this.removeAll();
         removePanelsFromList();
+    }
+
+    public ArrayList<StringPanel> getShortPanels() {
+        ArrayList<StringPanel> shortPanels = new ArrayList<>();
+        int maxLength = 0;
+        int shortestLength = 0;
+
+        for (int i = 0; i < stringPanels.size(); i++) {
+            StringPanel stringPanel = stringPanels.get(i);
+            int thisLength = stringPanel.getRawLength();
+            if (thisLength > maxLength) {
+                maxLength = thisLength;
+            }
+            if (thisLength <= maxLength) {
+                shortestLength = thisLength;
+            }
+
+        }
+        for (StringPanel stringPanel : stringPanels) {
+            if (stringPanel.getRawLength() < maxLength && stringPanel.getRawLength() == shortestLength) {
+                shortPanels.add(stringPanel);
+            }
+        }
+        return shortPanels;
     }
 }
