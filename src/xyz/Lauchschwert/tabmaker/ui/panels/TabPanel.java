@@ -118,26 +118,30 @@ public class TabPanel extends JPanel {
 
     public ArrayList<StringPanel> getShortPanels() {
         ArrayList<StringPanel> shortPanels = new ArrayList<>();
-        int maxLength = 0;
-        int shortestLength = 0;
+        
+        int maxLength = Integer.MIN_VALUE;       // Start with the smallest possible integer for max
+        int shortestLength = Integer.MAX_VALUE;  // Start with the largest possible integer for min
 
         for (int i = 0; i < stringPanels.size(); i++) {
             StringPanel stringPanel = stringPanels.get(i);
             int thisLength = stringPanel.getRawLength();
-            if (thisLength > maxLength) {
-                maxLength = thisLength;
-            }
-            if (thisLength <= maxLength) {
-                shortestLength = thisLength;
-            }
+            System.out.println("This length: " + thisLength);
 
+            if (thisLength > maxLength) {
+                maxLength = thisLength;          // Update maxLength if thisLength is larger
+            }
+            if (thisLength < shortestLength) {
+                shortestLength = thisLength;     // Update shortestLength if thisLength is smaller
+            }
         }
+        
         for (StringPanel stringPanel : stringPanels) {
-            if (stringPanel.getRawLength() < maxLength && stringPanel.getRawLength() == shortestLength
-            || stringPanel.getRawLength() == shortestLength && stringPanel.getRawLength() == maxLength) {
+            if (stringPanel.getRawLength() == shortestLength || stringPanel.getRawLength() == maxLength && stringPanel.getRawLength() == shortestLength) {
                 shortPanels.add(stringPanel);
             }
         }
+        
+        System.out.println("shortest: " + shortestLength + "Max: " + maxLength);
         return shortPanels;
     }
 }
