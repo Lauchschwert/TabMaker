@@ -125,7 +125,6 @@ public class TabPanel extends JPanel {
         for (int i = 0; i < stringPanels.size(); i++) {
             StringPanel stringPanel = stringPanels.get(i);
             int thisLength = stringPanel.getRawLength();
-            System.out.println("This length: " + thisLength);
 
             if (thisLength > maxLength) {
                 maxLength = thisLength;          // Update maxLength if thisLength is larger
@@ -140,8 +139,6 @@ public class TabPanel extends JPanel {
                 shortPanels.add(stringPanel);
             }
         }
-        
-        System.out.println("shortest: " + shortestLength + "Max: " + maxLength);
         return shortPanels;
     }
 }
