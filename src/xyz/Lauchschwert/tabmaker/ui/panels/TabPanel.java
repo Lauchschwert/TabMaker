@@ -87,14 +87,14 @@ public class TabPanel extends JPanel {
 
         if (fileInt == JFileChooser.APPROVE_OPTION) {
             selectedFile = fileChooser.getSelectedFile();
+        } else if (fileInt == JFileChooser.CANCEL_OPTION) {
+            return;
         }
 
         // get longest tab length
         for (StringPanel stringPanel : stringPanels) {
             stringBuilder.append(stringPanel.toString() + "\n");
         }
-
-        System.out.println(stringBuilder.toString());
 
         try {
             if (selectedFile == null) {
